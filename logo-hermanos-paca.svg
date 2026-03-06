@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Logotipo Hermanos Paca</title>
+  <desc id="desc">Emblema circular dorado con panadero oliendo una hogaza y faja con el texto Hermanos Paca.</desc>
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFE3B0"/>
+      <stop offset="100%" stop-color="#F6C480"/>
+    </linearGradient>
+  </defs>
+  <circle cx="512" cy="512" r="448" fill="url(#g1)" stroke="#9E6327" stroke-width="16"/>
+  <g id="baker">
+    <ellipse cx="512" cy="410" rx="95" ry="100" fill="#F6E7D7" stroke="#8B5A2B" stroke-width="6"/>
+    <path d="M380 300c0-56 70-90 160-70c90-20 160 20 160 80c0 24-12 40-36 46c-40 10-180 10-284-56z" fill="#FFFFFF" stroke="#B0B0B0" stroke-width="6"/>
+    <rect x="410" y="390" width="204" height="36" rx="16" fill="#EFEFEF" stroke="#B0B0B0" stroke-width="6"/>
+    <path d="M590 420c-24 12-24 24 0 36" stroke="#8B5A2B" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <rect x="560" y="560" width="320" height="110" rx="55" fill="#C17D3A" stroke="#7B4D23" stroke-width="10"/>
+    <path d="M600 590l40 20M660 590l40 20M720 590l40 20M780 590l40 20" stroke="#FFEEDD" stroke-width="10"/>
+    <path d="M640 520c-20 30 20 40 0 70M680 510c-20 30 20 40 0 70M720 500c-20 30 20 40 0 70" stroke="#FFFFFF" stroke-opacity=".85" stroke-width="12" fill="none" stroke-linecap="round"/>
+  </g>
+  <g id="ribbon">
+    <rect x="160" y="720" width="704" height="140" rx="20" fill="#5C3A1E"/>
+    <text x="512" y="770" font-family="DejaVu Sans, Segoe UI, Arial" font-size="54" fill="#FFFFFF" text-anchor="middle" font-weight="700">PANADERÍA Y EMBUTIDOS</text>
+    <text x="512" y="840" font-family="DejaVu Sans, Segoe UI, Arial" font-size="96" fill="#FFCF4D" text-anchor="middle" font-weight="900">Hermanos Paca</text>
+  </g>
+</svg>
