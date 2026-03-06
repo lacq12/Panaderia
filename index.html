@@ -70,6 +70,44 @@
 
     .map-container{ position:relative; width:100%; padding-bottom:56.25%; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); }
     .map-container iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+
+	  /* ---- Lightbox CSS sin JavaScript ---- */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease-in-out;
+  z-index: 9999;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.lightbox:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 3rem;
+  color: #fff;
+  text-decoration: none;
+}
   </style>
 </head>
 <body>
@@ -130,7 +168,16 @@
         <h2 class="section-title">Galería</h2>
         <p class="section-subtitle">Un vistazo a nuestro local, equipo y productos.</p>
         <div class="grid gallery">
-          <figure><img src="./galeria-local.jpg" alt="Vista del local de la panadería" /></figure>
+          <figure>
+  <a href="#img1">
+    <img src="images/galeria-local.jpg" alt="">
+  </a>
+</figure>
+
+<div class="lightbox" id="img1">
+  <a href="#" class="lightbox-close">&times;</a>
+  <img src="./galeria-local.jpg" alt="">
+</div>
           <figure><img src="./galeria-horno.jpg" alt="Horno encendido con bandejas de pan" /></figure>
           <figure><img src="./galeria-vitrina.jpg" alt="Vitrina con panes y dulces" /></figure>
           <figure><img src="./galeria-equipo.png" alt="Equipo de la panadería en el área de trabajo" /></figure>
