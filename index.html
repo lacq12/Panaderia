@@ -21,19 +21,24 @@
     :root{
       --color-bg: #FFF8F1; --color-surface: #FFFFFF; --color-primary: #C17D3A; --color-primary-700: #9E6327; --color-accent: #2F855A; --color-text: #2B2B2B; --color-muted: #6B7280; --radius: 14px; --shadow: 0 8px 24px rgba(0,0,0,0.08); --maxw: 1200px;
       --fs-900: clamp(2rem, 3.5vw + 1rem, 3rem); --fs-700: clamp(1.5rem, 2.5vw + 0.5rem, 2.2rem); --fs-600: 1.5rem; --fs-500: 1.125rem; --fs-400: 1rem; --fs-300: 0.95rem;
-      --logo-size: clamp(84px, 10vw, 132px); 
-      --brand-fs-top: clamp(1.rem, 1.6vw, 1.25rem);
-      --brand-fs-bottom: clamp(1.2rem, 2.4vw, 2.rem);
+      --logo-size: clamp(84px, 10vw, 132px);
+      /* Fix typos en tamaños de marca */
+      --brand-fs-top: clamp(1rem, 1.6vw, 1.25rem);
+      --brand-fs-bottom: clamp(1.2rem, 2.4vw, 2rem);
     }
     *{ box-sizing: border-box; } html:focus-within { scroll-behavior: smooth; }
     body{ margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color:var(--color-text); background:var(--color-bg); line-height:1.5; font-size:var(--fs-400); }
     img, svg { display:block; max-width:100%; height:auto; }
     a{ color: var(--color-primary-700); text-decoration: none; } a:hover{ text-decoration: underline; }
     :focus-visible{ outline: 3px solid #2563EB; outline-offset: 3px; border-radius: 6px; }
-    .container{ max-width: var(--maxw); margin-inline: auto; padding: 0 1rem; } .section{ padding: 3rem 0; }
+
+    .container{ max-width: var(--maxw); margin-inline: auto; padding: 0 1rem; }
+    .section{ padding: 3rem 0; }
     .surface{ background: var(--color-surface); border-radius: var(--radius); box-shadow: var(--shadow); }
     .grid{ display:grid; gap:1.25rem; }
+
     .skip-link{ position:absolute; top:-1000px; left:1rem; background:#111; color:#fff; padding:.5rem .75rem; border-radius:8px; z-index:9999; } .skip-link:focus{ top:1rem; }
+
     header{ background: var(--color-surface); position: sticky; top: 0; z-index: 10; box-shadow: 0 6px 16px rgba(0,0,0,0.06); }
     .header-wrap{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.75rem 0; flex-wrap: wrap; }
     .logo{ display:flex; align-items:center; gap:1rem; min-height: calc(var(--logo-size) + .5rem); }
@@ -41,73 +46,97 @@
     .logo-text{ display:flex; flex-direction:column; line-height:1.05; }
     .brand-top{ font-weight:700; font-size: var(--brand-fs-top); letter-spacing:.2px; color: var(--color-primary-700); }
     .brand-bottom{ font-weight:900; font-size: var(--brand-fs-bottom); color: var(--color-primary); }
+
     nav ul{ display:flex; list-style:none; gap:.75rem; padding:0; margin:0; }
     nav a{ display:inline-block; padding:.4rem .75rem; border-radius:999px; font-weight:600; } nav a:hover, nav a:focus{ background: rgba(193,125,58,.12); text-decoration:none; } nav a:active{ background: rgba(193,125,58,.2); }
+
     .hero{ display:grid; gap:1.25rem; align-items:center; grid-template-columns: 1fr; padding: 2rem 0 0; }
-    .hero h1{ font-size: var(--fs-900); margin:0; line-height:1.1; } .hero p.lead{ font-size: var(--fs-500); color: var(--color-muted); margin:.5rem 0 1rem; }
-    .cta{ display:inline-flex; align-items:center; gap:.5rem; background: var(--color-primary); color:#fff; padding:.75rem 1rem; border-radius:999px; border:2px solid transparent; font-weight:700; box-shadow:0 8px 16px rgba(193,125,58,.25); } .cta:hover{ background: var(--color-primary-700); } .cta:focus{ border-color:#fff; } .cta:active{ transform: translateY(1px); }
-    .hero-visual{ border-radius: var(--radius); overflow:hidden; box-shadow: var(--shadow); min-height:240px; background:#F8EBDD; } .hero-visual img{ width:100%; height:100%; object-fit:cover; }
-    .section-title{ font-size: var(--fs-700); margin:0 0 1rem 0; line-height:1.15; } .section-subtitle{ color: var(--color-muted); margin-bottom:1.5rem; }
-    .about{ display:grid; gap:1.25rem; grid-template-columns:1fr; } .about figure{ border-radius: var(--radius); overflow:hidden; box-shadow: var(--shadow); margin:0; max-width:360px; } .about img{ width:100%; height:100%; object-fit:cover; }
-    .gallery{ grid-template-columns: repeat(2, 1fr); } .gallery figure{ margin:0; border-radius: var(--radius); overflow:hidden; box-shadow: var(--shadow); background:#fafafa; aspect-ratio:4/3; } .gallery img{ width:100%; height:100%; object-fit:cover; }
-    .catalog{ grid-template-columns:1fr; } .card{ border-radius: var(--radius); background: var(--color-surface); box-shadow: var(--shadow); overflow:hidden; display:grid; grid-template-rows:auto 1fr auto; } .card .thumb{ height:180px; background:#f3f4f6; } .card .thumb img{ width:100%; height:100%; object-fit:cover; } .card-content{ padding:1rem; }
+    .hero h1{ font-size: var(--fs-900); margin:0; line-height:1.1; }
+    .hero p.lead{ font-size: var(--fs-500); color: var(--color-muted); margin:.5rem 0 1rem; }
+    .cta{ display:inline-flex; align-items:center; gap:.5rem; background: var(--color-primary); color:#fff; padding:.75rem 1rem; border-radius:999px; border:2px solid transparent; font-weight:700; box-shadow:0 8px 16px rgba(193,125,58,.25); }
+    .cta:hover{ background: var(--color-primary-700); }
+    .cta:focus{ border-color:#fff; }
+    .cta:active{ transform: translateY(1px); }
+
+    .hero-visual{ border-radius: var(--radius); overflow:hidden; box-shadow: var(--shadow); min-height:240px; background:#F8EBDD; }
+    .hero-visual img{ width:100%; height:100%; object-fit:cover; }
+
+    .section-title{ font-size: var(--fs-700); margin:0 0 1rem 0; line-height:1.15; }
+    .section-subtitle{ color: var(--color-muted); margin-bottom:1.5rem; }
+
+    .about{ display:grid; gap:1.25rem; grid-template-columns:1fr; }
+    .about figure{ border-radius: var(--radius); overflow:hidden; box-shadow: var(--shadow); margin:0; max-width:360px; }
+    .about img{ width:100%; height:100%; object-fit:cover; }
+
+    /* ---- Galería ---- */
+    .gallery { display:grid; gap: 1.25rem; grid-template-columns: repeat(2, 1fr); }
+    @media (min-width:700px){ .gallery{ grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width:1024px){ .gallery{ grid-template-columns: repeat(4, 1fr); } }
+    .gallery figure{ margin:0; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); background:#fafafa; aspect-ratio: 4/3; }
+    .gallery figure a{ display:block; width:100%; height:100%; }
+    .gallery figure img{ width:100%; height:100%; object-fit:cover; }
+
+    /* ---- Catálogo ---- */
+    .catalog{ display:grid; gap:1.25rem; grid-template-columns:1fr; }
+    @media (min-width:700px){ .catalog{ grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width:1024px){ .catalog{ grid-template-columns: repeat(3, 1fr); } }
+    .card{ border-radius: var(--radius); background: var(--color-surface); box-shadow: var(--shadow); overflow:hidden; display:grid; grid-template-rows:auto 1fr auto; }
+    .card .thumb{ height:180px; background:#f3f4f6; }
+    .card .thumb img{ width:100%; height:100%; object-fit:cover; }
+    .card-content{ padding:1rem; }
+    .card h3{ margin:0 0 .25rem 0; font-size: var(--fs-600); }
     .price{ font-weight:800; color: var(--color-accent); margin-top:.25rem; }
-    .buy-btn{ margin:.75rem 1rem 1rem; display:inline-flex; justify-content:center; align-items:center; background: var(--color-accent); color:#fff; border-radius:10px; padding:.6rem .9rem; font-weight:700; border:2px solid transparent; } .buy-btn:hover{ background:#26684A; } .buy-btn:active{ transform: translateY(1px); }
-    form{ display:grid; gap:.75rem; } label{ font-weight:700; } input, textarea{ width:100%; padding:.75rem .9rem; border-radius:10px; border:1.5px solid #E5E7EB; font:inherit; background:#fff; } input:focus, textarea:focus{ border-color: var(--color-primary-700); outline:none; box-shadow:0 0 0 3px rgba(193,125,58,.15); } .btn{ display:inline-flex; align-items:center; justify-content:center; gap:.5rem; padding:.7rem 1rem; border-radius:999px; border:2px solid transparent; background: var(--color-primary); color:#fff; font-weight:800; } .btn:hover{ background: var(--color-primary-700); } .btn:active{ transform: translateY(1px); }
-    .social{ display:flex; gap:.75rem; flex-wrap:wrap; } .chip{ padding:.5rem .75rem; border-radius:999px; background:#F2F2F2; font-weight:600; border:1px solid #E5E7EB; } .chip:hover{ background:#EDEDED; }
+    .buy-btn{ margin:.75rem 1rem 1rem; display:inline-flex; justify-content:center; align-items:center; background: var(--color-accent); color:#fff; border-radius:10px; padding:.6rem .9rem; font-weight:700; border:2px solid transparent; }
+    .buy-btn:hover{ background:#26684A; }
+    .buy-btn:active{ transform: translateY(1px); }
+
+    form{ display:grid; gap:.75rem; }
+    label{ font-weight:700; }
+    input, textarea{ width:100%; padding:.75rem .9rem; border-radius:10px; border:1.5px solid #E5E7EB; font:inherit; background:#fff; }
+    input:focus, textarea:focus{ border-color: var(--color-primary-700); outline:none; box-shadow:0 0 0 3px rgba(193,125,58,.15); }
+    .btn{ display:inline-flex; align-items:center; justify-content:center; gap:.5rem; padding:.7rem 1rem; border-radius:999px; border:2px solid transparent; background: var(--color-primary); color:#fff; font-weight:800; }
+    .btn:hover{ background: var(--color-primary-700); }
+    .btn:active{ transform: translateY(1px); }
+
+    .social{ display:flex; gap:.75rem; flex-wrap:wrap; }
+    .chip{ padding:.5rem .75rem; border-radius:999px; background:#F2F2F2; font-weight:600; border:1px solid #E5E7EB; }
+    .chip:hover{ background:#EDEDED; }
+
     footer{ margin-top:2rem; padding:1.5rem 0; color:#595959; }
-    @media (min-width:700px){ .hero{ grid-template-columns: 1.1fr 1fr; } .about{ grid-template-columns: 1fr 1.2fr; align-items:start; } .gallery{ grid-template-columns: repeat(3, 1fr); } .catalog{ grid-template-columns: repeat(2, 1fr); } }
-    @media (min-width:1024px){ .catalog{ grid-template-columns: repeat(3, 1fr); } .gallery{ grid-template-columns: repeat(4, 1fr); } }
-    @media (min-width:1280px){ .catalog{ grid-template-columns: repeat(4, 1fr); } }
-    .muted{ color: var(--color-muted); } .badge{ display:inline-block; background:#FEF3C7; color:#92400E; border:1px solid #FCD34D; padding:.3rem .6rem; border-radius:999px; font-weight:700; font-size:.85rem; }
 
-    /* Animación de entrada: fade-in + zoom-in + bounce suave */
-    .logo-anim{opacity: 0; transform: translateY(10px) scale(0.92); animation: logoFadeZoomBounce 4s ease-out .3s both;  will-change: transform, opacity;
-}
-    @keyframes logoFadeZoomBounce{ 0%{opacity:0; transform: translateY(12px) scale(0.90);} 60%{opacity:1; transform: translateY(-6px) scale(1.02);} 80%{opacity:1; transform: translateY(3px) scale(0.995);} 100%{opacity:1; transform: translateY(0) scale(1);} }
-    @media (max-width:480px){ .logo-anim{ animation-duration:4s; } }
-    @media (prefers-reduced-motion: reduce){ .logo-anim{ animation: logoFadeOnly .25s linear both; } @keyframes logoFadeOnly{ from{opacity:0;} to{opacity:1;} } }
+    /* Animación del logo mejor distribuida */
+    .logo-anim{
+      opacity: 0;
+      transform: translateY(10px) scale(0.92);
+      animation: logoFadeZoomBounce 3.5s cubic-bezier(.2,.6,.2,1) .35s both;
+      will-change: transform, opacity;
+    }
+    @keyframes logoFadeZoomBounce{
+      0%   { opacity: 0; transform: translateY(14px) scale(0.90); }
+      20%  { opacity: 0; transform: translateY(12px) scale(0.90); }
+      70%  { opacity: 1; transform: translateY(-6px) scale(1.02); }
+      85%  { opacity: 1; transform: translateY(3px)  scale(0.995); }
+      100% { opacity: 1; transform: translateY(0)    scale(1.00); }
+    }
+    @media (max-width: 480px){ .logo-anim{ animation-duration: 3s; animation-delay: .2s; } }
+    @media (prefers-reduced-motion: reduce){
+      .logo-anim{ animation: logoFadeOnly .3s linear both; }
+      @keyframes logoFadeOnly{ from{opacity:0;} to{opacity:1;} }
+    }
 
+    /* Mapa responsivo + versión reducida al 60% del ancho */
     .map-container{ position:relative; width:100%; padding-bottom:56.25%; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); }
     .map-container iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+    .map-container.small{ max-width:60%; margin-inline:auto; }
+    @media (max-width:640px){ .map-container.small{ max-width:100%; } }
 
-	  /* ---- Lightbox CSS sin JavaScript ---- */
-
-.lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  backdrop-filter: blur(3px);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .3s ease-in-out;
-  z-index: 9999;
-}
-
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-.lightbox:target {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 3rem;
-  color: #fff;
-  text-decoration: none;
-}
+    /* ---- Lightbox (CSS puro) ---- */
+    .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: grid; place-items: center; padding: 1rem; backdrop-filter: blur(3px); opacity: 0; pointer-events: none; visibility: hidden; transition: opacity .25s ease, visibility .25s ease; z-index: 9999; }
+    .lightbox:target { opacity: 1; pointer-events: auto; visibility: visible; }
+    .lightbox .lightbox-backdrop{ position:absolute; inset:0; display:block; }
+    .lightbox img{ max-width: min(90vw, 1200px); max-height: 90vh; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); z-index:1; }
+    .lightbox .lightbox-close{ position:absolute; top:16px; right:24px; font-size:2.25rem; line-height:1; color:#fff; text-decoration:none; z-index:2; }
+    .lightbox .lightbox-close:focus-visible{ outline:3px solid #fff; border-radius:6px; }
   </style>
 </head>
 <body>
@@ -115,7 +144,7 @@
   <header role="banner">
     <div class="container header-wrap" aria-label="Encabezado">
       <a class="logo" href="#contenido" aria-label="Inicio">
-        <img class="mark logo-anim" src="./logo-hermanos-paca.png" alt="Logotipo de la marca con panadero oliendo un pan" />
+        <img class="mark logo-anim" src="./logo-hermanos-paca.png" alt="Logotipo de Panadería y Embutidos Hermanos Paca: panadero oliendo una hogaza" />
         <span class="logo-text" aria-label="Panadería y Embutidos Hermanos Paca">
           <span class="brand-top">Panadería y Embutidos</span>
           <span class="brand-bottom">Hermanos Paca</span>
@@ -131,6 +160,7 @@
       </nav>
     </div>
   </header>
+
   <main id="contenido">
     <section class="container hero">
       <div>
@@ -150,58 +180,95 @@
         <p class="section-subtitle"><strong>Panadería y Embutidos Hermanos Paca</strong> es un negocio del barrio San Felipe en Santo Domingo Norte, Villa Mella que combina procesos artesanales con ingredientes locales. Nos diferencia nuestra masa madre cuidada, el tostado propio de semillas, una selección honesta de embutidos y un servicio cercano con entrega a domicilio en el sector.</p>
       </div>
     </section>
- <section class="section">
+
+    <section class="section">
       <div class="container about">
         <figure>
           <img src="./estudiante.png" alt="Foto del responsable del proyecto" />
         </figure>
         <div>
           <h2 class="section-title">Sobre mí / Responsable del proyecto</h2>
-          <p class="muted">Hola, soy <strong>Luis Alberto Carmona Quezada</strong>, estudiante de Licenciatura en Informatica de la UASD y autor de este proyecto web. 
-		  Desde temprana edad me ha interesado la tecnología web aplicada a negocios locales, por eso en esta ocasión estaremos preparando una pagína web para este 
-		  establecimiento. Esta página fue construida con HTML y CSS responsivo (Grid/Flex) buscando adquirir durante este proceso las prácticas y habilidades básicas de programación web.</p>
+          <p class="muted">Hola, soy <strong>Luis Alberto Carmona Quezada</strong>, estudiante de Licenciatura en Informática de la UASD y autor de este proyecto web. Desde temprana edad me ha interesado la tecnología web aplicada a negocios locales; esta página fue construida con HTML y CSS responsivo (Grid/Flex) para practicar habilidades y buenas bases de accesibilidad.</p>
         </div>
       </div>
     </section>
+
     <section id="galeria" class="section">
       <div class="container">
         <h2 class="section-title">Galería</h2>
         <p class="section-subtitle">Un vistazo a nuestro local, equipo y productos.</p>
-        <div class="grid gallery">
-          <figure><a href="#img1">
-          <img src="./galeria-local.jpg" alt="">
-		  </a></figure>
-          <div class="lightbox" id="img1">
-          <a href="#" class="lightbox-close">&times;</a>
-          <img src="./galeria-local.jpg" alt="">
-        </div>
-          <figure><img src="./galeria-horno.jpg" alt="Vitrina con panes y dulces" /></figure>
-          <figure><img src="./galeria-vitrina.jpg" alt="Vitrina con panes y dulces" /></figure>
-          <figure><img src="./galeria-equipo.png" alt="Equipo de la panadería en el área de trabajo" /></figure>
-          <figure><img src="./galeria-cafe.png" alt="Café servido con pan recién horneado" /></figure>
-          <figure><img src="./galeria-detalle.jpg" alt="Detalle de corteza crujiente de pan" /></figure>
-		  <figure><img src="./20260305_190410.jpg" alt="Detalle de corteza crujiente de pan" /></figure>
-		  <figure><img src="./20260305_190258.jpg" alt="Detalle de corteza crujiente de pan" /></figure>
+        <div class="gallery">
+          <figure><a href="#img1"><img src="./galeria-local.jpg" alt="Vista del local de la panadería" loading="lazy"></a></figure>
+          <figure><a href="#img2"><img src="./galeria-horno.jpg" alt="Horno encendido con bandejas de pan" loading="lazy"></a></figure>
+          <figure><a href="#img3"><img src="./galeria-vitrina.jpg" alt="Vitrina con panes y dulces" loading="lazy"></a></figure>
+          <figure><a href="#img4"><img src="./galeria-equipo.png" alt="Equipo de la panadería en el área de trabajo" loading="lazy"></a></figure>
+          <figure><a href="#img5"><img src="./galeria-cafe.png" alt="Café servido con pan recién horneado" loading="lazy"></a></figure>
+          <figure><a href="#img6"><img src="./galeria-detalle.jpg" alt="Detalle de corteza crujiente de pan" loading="lazy"></a></figure>
+          <figure><a href="#img7"><img src="./20260305_190410.jpg" alt="Pan artesanal en bandeja" loading="lazy"></a></figure>
+          <figure><a href="#img8"><img src="./20260305_190258.jpg" alt="Hogaza tostada sobre superficie" loading="lazy"></a></figure>
         </div>
       </div>
     </section>
+
+    <!-- Overlays del lightbox (fuera de la grilla) -->
+    <div class="lightbox" id="img1" role="dialog" aria-label="Vista ampliada: local de la panadería">
+      <a href="#galeria" class="lightbox-backdrop" aria-label="Cerrar"></a>
+      <img src="./galeria-local.jpg" alt="Vista del local de la panadería" />
+      <a href="#galeria" class="lightbox-close" aria-label="Cerrar">×</a>
+    </div>
+    <div class="lightbox" id="img2" role="dialog" aria-label="Vista ampliada: horno con bandejas de pan">
+      <a href="#galeria" class="lightbox-backdrop" aria-label="Cerrar"></a>
+      <img src="./galeria-horno.jpg" alt="Horno encendido con bandejas de pan" />
+      <a href="#galeria" class="lightbox-close" aria-label="Cerrar">×</a>
+    </div>
+    <div class="lightbox" id="img3" role="dialog" aria-label="Vista ampliada: vitrina con panes y dulces">
+      <a href="#galeria" class="lightbox-backdrop" aria-label="Cerrar"></a>
+      <img src="./galeria-vitrina.jpg" alt="Vitrina con panes y dulces" />
+      <a href="#galeria" class="lightbox-close" aria-label="Cerrar">×</a>
+    </div>
+    <div class="lightbox" id="img4" role="dialog" aria-label="Vista ampliada: equipo de trabajo">
+      <a href="#galeria" class="lightbox-backdrop" aria-label="Cerrar"></a>
+      <img src="./galeria-equipo.png" alt="Equipo de la panadería en el área de trabajo" />
+      <a href="#galeria" class="lightbox-close" aria-label="Cerrar">×</a>
+    </div>
+    <div class="lightbox" id="img5" role="dialog" aria-label="Vista ampliada: café con pan">
+      <a href="#galeria" class="lightbox-backdrop" aria-label="Cerrar"></a>
+      <img src="./galeria-cafe.png" alt="Café servido con pan recién horneado" />
+      <a href="#galeria" class="lightbox-close" aria-label="Cerrar">×</a>
+    </div>
+    <div class="lightbox" id="img6" role="dialog" aria-label="Vista ampliada: detalle de corteza crujiente">
+      <a href="#galeria" class="lightbox-backdrop" aria-label="Cerrar"></a>
+      <img src="./galeria-detalle.jpg" alt="Detalle de corteza crujiente de pan" />
+      <a href="#galeria" class="lightbox-close" aria-label="Cerrar">×</a>
+    </div>
+    <div class="lightbox" id="img7" role="dialog" aria-label="Vista ampliada: pan artesanal en bandeja">
+      <a href="#galeria" class="lightbox-backdrop" aria-label="Cerrar"></a>
+      <img src="./20260305_190410.jpg" alt="Pan artesanal en bandeja" />
+      <a href="#galeria" class="lightbox-close" aria-label="Cerrar">×</a>
+    </div>
+    <div class="lightbox" id="img8" role="dialog" aria-label="Vista ampliada: hogaza tostada">
+      <a href="#galeria" class="lightbox-backdrop" aria-label="Cerrar"></a>
+      <img src="./20260305_190258.jpg" alt="Hogaza tostada" />
+      <a href="#galeria" class="lightbox-close" aria-label="Cerrar">×</a>
+    </div>
 
     <section id="catalogo" class="section">
       <div class="container">
         <h2 class="section-title">Catálogo</h2>
         <p class="section-subtitle">Panes, dulces y embutidos destacados.</p>
-        <div class="grid catalog">
-          <article class="card" aria-label="Pan de agua">
-            <div class="thumb"><img src="./pan-agua.jpg" alt="Pan de agua dominicano" /></div>
+        <div class="catalog">
+          <article class="card" aria-label="Pan Haitiano">
+            <div class="thumb"><img src="./pan-agua.jpg" alt="Pan Haitiano" loading="lazy" /></div>
             <div class="card-content">
               <h3>Pan Haitiano</h3>
               <p class="muted">Clásico dominicano, miga suave y corteza fina. Ideal para el desayuno.</p>
               <p class="price">RD$ 5 la unidad</p>
             </div>
-            <a class="buy-btn" href="#contacto" aria-label="Solicitar pan de agua">Solicitar</a>
+            <a class="buy-btn" href="#contacto" aria-label="Solicitar Pan Haitiano">Solicitar</a>
           </article>
+
           <article class="card" aria-label="Pan Redondo">
-            <div class="thumb"><img src="./pan-sobao2.jpg" alt="Pan Redondo" /></div>
+            <div class="thumb"><img src="./pan-sobao2.jpg" alt="Pan Redondo" loading="lazy" /></div>
             <div class="card-content">
               <h3>Pan Redondo</h3>
               <p class="muted">Textura tierna y ligeramente dulce. Perfecto para mini sándwiches.</p>
@@ -209,8 +276,9 @@
             </div>
             <a class="buy-btn" href="#contacto" aria-label="Solicitar Pan Redondo">Solicitar</a>
           </article>
+
           <article class="card" aria-label="Integral con semillas">
-            <div class="thumb"><img src="./pan-integral.png" alt="Pan integral con semillas" /></div>
+            <div class="thumb"><img src="./pan-integral.png" alt="Pan integral con semillas" loading="lazy" /></div>
             <div class="card-content">
               <h3>Integral con semillas</h3>
               <p class="muted">Harinas mixtas y tostado propio de semillas para un sabor profundo.</p>
@@ -218,8 +286,9 @@
             </div>
             <a class="buy-btn" href="#contacto" aria-label="Solicitar pan integral">Solicitar</a>
           </article>
+
           <article class="card" aria-label="Pan De Agua">
-            <div class="thumb"><img src="./croissant.png" alt="Pan De Agua" /></div>
+            <div class="thumb"><img src="./croissant.png" alt="Pan De Agua" loading="lazy" /></div>
             <div class="card-content">
               <h3>Pan De Agua</h3>
               <p class="muted">Pan artesanal caracterizado por su alta hidratación, lo que le otorga una corteza crujiente y una miga muy ligera, aireada y elástica.</p>
@@ -227,8 +296,9 @@
             </div>
             <a class="buy-btn" href="#contacto" aria-label="Solicitar Pan De Agua">Solicitar</a>
           </article>
+
           <article class="card" aria-label="Pastelitos de guayaba">
-            <div class="thumb"><img src="./guayaba.png" alt="Pastelitos de guayaba" /></div>
+            <div class="thumb"><img src="./guayaba.png" alt="Pastelitos de guayaba" loading="lazy" /></div>
             <div class="card-content">
               <h3>Pastelitos de guayaba</h3>
               <p class="muted">Dulce criollo con relleno de guayaba casera. Favorito de la casa.</p>
@@ -236,29 +306,32 @@
             </div>
             <a class="buy-btn" href="#contacto" aria-label="Solicitar pastelitos de guayaba">Solicitar</a>
           </article>
-          <article class="card" aria-label="Tres leches">
-            <div class="thumb"><img src="./tres-leches.png" alt="Porción de tres leches" /></div>
+
+          <article class="card" aria-label="Tarta de limón con merengue">
+            <div class="thumb"><img src="./tres-leches.png" alt="Tarta de limón con merengue" loading="lazy" /></div>
             <div class="card-content">
               <h3>Tarta de limón con merengue (porción)</h3>
               <p class="muted">Postre clásico que combina una base crujiente, un relleno cítrico y una cobertura dulce y aireada.</p>
               <p class="price">RD$ 120 la porción</p>
             </div>
-            <a class="buy-btn" href="#contacto" aria-label="Solicitar tres leches">Solicitar</a>
+            <a class="buy-btn" href="#contacto" aria-label="Solicitar tarta de limón con merengue">Solicitar</a>
           </article>
-		  <article class="card" aria-label="Pan Trenzado">
-            <div class="thumb"><img src="./Screenshot_5.png" alt="Pan Trenzado" /></div>
+
+          <article class="card" aria-label="Pan Trenzado">
+            <div class="thumb"><img src="./Screenshot_5.png" alt="Pan Trenzado" loading="lazy" /></div>
             <div class="card-content">
               <h3>Pan Trenzado</h3>
-              <p class="muted">Pan cuya masa se divide en varios cordones que se entrelazan antes de hornearse, creando un patrón visual distintivo y una textura aireada.</p>
+              <p class="muted">Pan cuya masa se divide en varios cordones entrelazados, con patrón visual distintivo y textura aireada.</p>
               <p class="price">RD$ 150 la unidad</p>
             </div>
             <a class="buy-btn" href="#contacto" aria-label="Solicitar Pan Trenzado">Solicitar</a>
           </article>
-		  <article class="card" aria-label="Pan Campesino">
-            <div class="thumb"><img src="./Screenshot_4.png" alt="Pan Campesino" /></div>
+
+          <article class="card" aria-label="Pan Campesino">
+            <div class="thumb"><img src="./Screenshot_4.png" alt="Pan Campesino" loading="lazy" /></div>
             <div class="card-content">
               <h3>Pan Campesino</h3>
-              <p class="muted">Pan artesanal de origen europeo, caracterizado por ser una hogaza rústica de gran tamaño con corteza gruesa y crujiente, y una miga densa, húmeda y alveolada..</p>
+              <p class="muted">Hogaza rústica de gran tamaño con corteza crujiente y miga densa, húmeda y alveolada.</p>
               <p class="price">RD$ 165 la unidad</p>
             </div>
             <a class="buy-btn" href="#contacto" aria-label="Solicitar Pan Campesino">Solicitar</a>
@@ -298,14 +371,13 @@
             <li><a class="chip" href="mailto:contacto@hermanospaca.com">Correo</a></li>
           </ul>
           <div style="margin-top: 1rem;">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d236.389110927573!2d-69.90701995799988!3d18.563857283419672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf8f27f44404f5%3A0x60036d9bf80b6e33!2sPanaderia%20y%20embutidos%20Hnos%20paca!5e0!3m2!1ses-419!2sdo!4v1772825706992!5m2!1ses-419!2sdo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-			<p class="muted">
-			<strong>Dirección:</strong> Calle Principal Urbanización Remanso, San Felipe, Santo Domingo Norte<br>
-			<strong>Horario:</strong> Lun–Sáb 6:30 a.m. – 8:00 p.m. · Dom 7:00 a.m. – 2:00 p.m.
-			</p>
-			</div>
-		 </div>
+            <div class="map-container small">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d236.389110927573!2d-69.90701995799988!3d18.563857283419672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf8f27f44404f5%3A0x60036d9bf80b6e33!2sPanaderia%20y%20embutidos%20Hnos%20paca!5e0!3m2!1ses-419!2sdo!4v1772825706992!5m2!1ses-419!2sdo" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            </div>
+            <p class="muted"><strong>Dirección:</strong> Calle Principal Urbanización Remanso, San Felipe, Santo Domingo Norte<br><strong>Horario:</strong> Lun–Sáb 6:30 a.m. – 8:00 p.m. · Dom 7:00 a.m. – 2:00 p.m.</p>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -314,6 +386,8 @@
       <p>© <span id="year"></span> Panadería y Embutidos Hermanos Paca · Proyecto estudiantil</p>
     </div>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
